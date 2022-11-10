@@ -1,0 +1,16 @@
+version: \"3.9\"
+services:
+    wordpress:
+        image: wordpress
+        restart: always
+        ports:
+          - "80:80"
+        environment:
+            WORDPRESS_DB_HOST: ${dbhost}
+            WORDPRESS_DB_USER: ${dbuser}
+            WORDPRESS_DB_PASSWORD: ${dbpassword}
+            WORDPRESS_DB_NAME: ${dbname}
+        volumes:
+          - wordpress:/var/www/html
+volumes:
+  wordpress:
