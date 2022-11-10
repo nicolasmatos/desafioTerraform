@@ -13,7 +13,7 @@ resource "aws_network_acl" "acl_pub" {
     protocol   = -1
     rule_no    = 101
     action     = "allow"
-    cidr_block = ["0.0.0.0/0"]
+    cidr_block = "0.0.0.0/0"
     from_port  = 0
     to_port    = 0
   }
@@ -22,7 +22,7 @@ resource "aws_network_acl" "acl_pub" {
     protocol   = -1
     rule_no    = 100
     action     = "allow"
-    cidr_block = ["0.0.0.0/0"]
+    cidr_block = "0.0.0.0/0"
     from_port  = 0
     to_port    = 0
   }
@@ -43,7 +43,7 @@ resource "aws_network_acl" "acl_priv" {
     protocol   = -1
     rule_no    = 101
     action     = "allow"
-    cidr_block = ["0.0.0.0/0"]
+    cidr_block = "0.0.0.0/0"
     from_port  = 0
     to_port    = 0
   }
@@ -52,7 +52,7 @@ resource "aws_network_acl" "acl_priv" {
     protocol   = -1
     rule_no    = 100
     action     = "allow"
-    cidr_block = ["0.0.0.0/0"]
+    cidr_block = "0.0.0.0/0"
     from_port  = 0
     to_port    = 0
   }

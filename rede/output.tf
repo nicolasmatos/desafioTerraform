@@ -51,11 +51,11 @@ output "priv6_id" {
 }
 
 output "rt_pub_id" {
-  value = aws_subnet.rt_pub.id
+  value = aws_route_table.rt_pub.id
 }
 
 output "rt_priv_id" {
-  value = aws_subnet.rt_priv.id
+  value = aws_route_table.rt_priv.id
 }
 
 // Security groups 
