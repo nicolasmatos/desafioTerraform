@@ -15,6 +15,16 @@ terraform {
     key    = "rede/terraform.tfstate"
     region = "us-east-1"
   }
+  /*
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "devopsDesafio2"
+
+    workspaces {
+      name = "desafio2"
+    }
+  }
+  */
 }
 
 provider "aws" {
