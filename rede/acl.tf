@@ -8,10 +8,14 @@ resource "aws_network_acl" "acl_pub" {
     aws_subnet.pub5.id, 
     aws_subnet.pub6.id 
   ]
+  tags = {
+    Name = "acl_${var.project-name}_pub",
+    Curso = "${var.course-name}"
+  }
 
   ingress {
     protocol   = -1
-    rule_no    = 101
+    rule_no    = 100
     action     = "allow"
     cidr_block = "0.0.0.0/0"
     from_port  = 0
@@ -38,10 +42,14 @@ resource "aws_network_acl" "acl_priv" {
     aws_subnet.priv5.id, 
     aws_subnet.priv6.id 
   ]
+  tags = {
+    Name = "acl_${var.project-name}_priv",
+    Curso = "${var.course-name}"
+  }
 
   ingress {
     protocol   = -1
-    rule_no    = 101
+    rule_no    = 100
     action     = "allow"
     cidr_block = "0.0.0.0/0"
     from_port  = 0
