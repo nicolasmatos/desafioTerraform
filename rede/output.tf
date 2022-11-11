@@ -96,7 +96,3 @@ output "course-name" {
 output "aws_region" {
   value = var.aws_region
 }
-
-output "aws_profile" {
-  value = var.aws_profile
-}

@@ -1,2 +1,5 @@
-/rede/.terraform/*
-/rede/.terraform.lock.hcl
+# /rede/.terraform/*
+# /rede/.terraform.lock.hcl
+
+.terraform/*
+.terraform.lock.hcl
