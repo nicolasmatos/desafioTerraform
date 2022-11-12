@@ -1,0 +1,3 @@
+module "rede" {
+  source = "./rede"
+}

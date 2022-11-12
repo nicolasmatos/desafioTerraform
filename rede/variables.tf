@@ -4,12 +4,6 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "aws_profile" {
-  type        = string
-  description = ""
-  default     = "default"
-}
-
 variable "project-name" {
   type        = string
   description = ""
