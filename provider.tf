@@ -9,13 +9,21 @@ terraform {
       source = "hashicorp/random"
     }
   }
+
+  /*
+  backend "s3" {
+    bucket = "devops-terraform-desafio2"
+    key    = "network/terraform.tfstate"
+    region = "us-east-1"
+  }
  
-#   backend "remote" {
-#     organization = "devopsDesafio2"
-#     workspaces {
-#       name = "desafio2"
-#     }
-#   }
+  backend "remote" {
+    organization = "devopsDesafio2"
+    workspaces {
+      name = "desafio2"
+    }
+  }
+  */
 }
 
 provider "aws" {
