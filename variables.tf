@@ -4,20 +4,14 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "project-name" {
+variable "project_name" {
   type        = string
   description = ""
   default     = "devops-terraform"
 }
 
-variable "ec2_instance_type" {
+variable "course_name" {
   type        = string
   description = ""
-  default     = "t2.micro"
-}
-
-variable "key_name" {
-  type        = string
-  description = ""
-  default     = "devops"
+  default     = "DevOps Cloud"
 }

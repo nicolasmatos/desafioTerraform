@@ -22,7 +22,7 @@ sudo mv /tmp/docker-compose /usr/local/bin/docker-compose
 sleep 4m 
 
 mkdir -p /var/www/html
-sudo echo "${efs-id}:/ /var/www/html/ nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport,_netdev 0 0" >> /etc/fstab
+sudo echo "${efs_id}:/ /var/www/html/ nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport,_netdev 0 0" >> /etc/fstab
 sudo mount -a
 
 echo "${dockercompose}" > /home/ubuntu/docker-compose.yml

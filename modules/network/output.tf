@@ -84,15 +84,23 @@ output "acl_priv_id" {
   value = aws_network_acl.acl_priv.id
 }
 
+output "db_group_priv_id" {
+  value = aws_db_subnet_group.db_group_priv.id
+}
+
+output "db_group_pub_id" {
+  value = aws_db_subnet_group.db_group_pub.id
+}
+
 //variaveis do projeto
-output "project-name" {
-  value = var.project-name
-}
-
-output "course-name" {
-  value = var.course-name
-}
-
 output "aws_region" {
   value = var.aws_region
+}
+
+output "project_name" {
+  value = var.project_name
+}
+
+output "course_name" {
+  value = var.course_name
 }

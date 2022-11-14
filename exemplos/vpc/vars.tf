@@ -29,8 +29,8 @@ variable "ip_ssh" {
 ###### Imagem ubuntu 20-04
 variable "ami" {
   description = "imagem ubuntu"
-  type        = map
-  default     = {
+  type        = map(any)
+  default = {
     "us-east-1" = "ami-0e4c5cf13ac94f6e1"
     "us-west-2" = "ami-0c09c7eb16d3e8e70"
   }
@@ -61,7 +61,7 @@ variable "vpc_dnsHostNames" {
 variable "vpc_azs" {
   description = "vpc_azs"
   type        = list(string)
-  default     = ["us-east-1a","us-east-1b"]
+  default     = ["us-east-1a", "us-east-1b"]
 }
 
 variable "vpc_az1" {
@@ -107,7 +107,7 @@ variable "vpc_publica2_subnet" {
   default     = "10.0.69.0/24"
 }
 
-variable "vpc_enable_nat_gateway"{
+variable "vpc_enable_nat_gateway" {
   description = "vpc_enable_nat_gateway"
   type        = bool
   default     = true
@@ -116,8 +116,8 @@ variable "vpc_enable_nat_gateway"{
 variable "vpc_tags" {
   description = "vpc_tags"
   type        = map(string)
-  default     = {
-    Terraform = "true"
+  default = {
+    Terraform   = "true"
     Environment = "desafio2"
   }
 }

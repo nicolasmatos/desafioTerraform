@@ -1,20 +1,6 @@
-variable "aws_region" {
-  type        = string
-  description = ""
-  default     = "us-east-1"
-}
-
-variable "project-name" {
-  type        = string
-  description = ""
-  default     = "devops-terraform"
-}
-
-variable "course-name" {
-  type        = string
-  description = ""
-  default     = "DevOps Cloud"
-}
+variable "aws_region" {}
+variable "project_name" {}
+variable "course_name" {}
 
 // portas security group 
 variable "sg_ec2" {

@@ -14,8 +14,8 @@ resource "aws_default_network_acl" "projeto2_acl" {
 */
 
 resource "aws_network_acl" "projeto2_acl" {
-  vpc_id = aws_vpc.projeto2_vpc.id
-  subnet_ids = [ aws_subnet.projeto2_privada1.id, aws_subnet.projeto2_privada2.id, aws_subnet.projeto2_publica1.id, aws_subnet.projeto2_publica2.id ]
+  vpc_id     = aws_vpc.projeto2_vpc.id
+  subnet_ids = [aws_subnet.projeto2_privada1.id, aws_subnet.projeto2_privada2.id, aws_subnet.projeto2_publica1.id, aws_subnet.projeto2_publica2.id]
 
   ingress {
     protocol   = -1
@@ -76,7 +76,7 @@ resource "aws_subnet" "projeto2_privada2" {
 }
 
 ########### Subnet Publica
-  resource "aws_subnet" "projeto2_publica1" {
+resource "aws_subnet" "projeto2_publica1" {
   vpc_id                                      = aws_vpc.projeto2_vpc.id
   availability_zone                           = var.vpc_az1
   cidr_block                                  = var.vpc_publica1_subnet
@@ -85,7 +85,7 @@ resource "aws_subnet" "projeto2_privada2" {
   tags                                        = var.vpc_tags
 }
 
-  resource "aws_subnet" "projeto2_publica2" {
+resource "aws_subnet" "projeto2_publica2" {
   vpc_id                                      = aws_vpc.projeto2_vpc.id
   availability_zone                           = var.vpc_az2
   cidr_block                                  = var.vpc_publica2_subnet
@@ -104,13 +104,13 @@ resource "aws_internet_gateway" "desafio2_gw" {
 
 ##### ROUTER TABLE
 resource "aws_route_table" "desafio2_rt_publica" {
- vpc_id = aws_vpc.projeto2_vpc.id
- tags   = var.vpc_tags
+  vpc_id = aws_vpc.projeto2_vpc.id
+  tags   = var.vpc_tags
 }
 
 resource "aws_route_table" "desafio2_rt_privada" {
- vpc_id = aws_vpc.projeto2_vpc.id
- tags   = var.vpc_tags
+  vpc_id = aws_vpc.projeto2_vpc.id
+  tags   = var.vpc_tags
 }
 
 ########## ROTA PARA INTERNET

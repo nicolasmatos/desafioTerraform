@@ -1,10 +1,10 @@
 resource "aws_security_group" "sg_ec2" {
-  name        = "sg_${var.project-name}_ec2"
+  name        = "sg_${var.project_name}_ec2"
   description = "Grupo seguranca EC2"
   vpc_id      = aws_vpc.vpc.id
   tags = {
-    Name = "sg_${var.project-name}_ec2",
-    Curso = "${var.course-name}"
+    Name  = "sg_${var.project_name}_ec2",
+    Curso = "${var.course_name}"
   }
 
   // utilizacao de blocos dinamicos para liberacao de portas no SG
@@ -27,12 +27,12 @@ resource "aws_security_group" "sg_ec2" {
 }
 
 resource "aws_security_group" "sg_alb" {
-  name        = "sg_${var.project-name}_lb"
+  name        = "sg_${var.project_name}_lb"
   description = "Grupo seguranca ALB"
   vpc_id      = aws_vpc.vpc.id
   tags = {
-    Name = "sg_${var.project-name}_lb",
-    Curso = "${var.course-name}"
+    Name  = "sg_${var.project_name}_lb",
+    Curso = "${var.course_name}"
   }
 
   dynamic "ingress" {
@@ -54,12 +54,12 @@ resource "aws_security_group" "sg_alb" {
 }
 
 resource "aws_security_group" "sg_rds" {
-  name        = "sg_${var.project-name}_rds"
+  name        = "sg_${var.project_name}_rds"
   description = "Grupo Seguranca RDS"
   vpc_id      = aws_vpc.vpc.id
   tags = {
-    Name = "sg_${var.project-name}_rds",
-    Curso = "${var.course-name}"
+    Name  = "sg_${var.project_name}_rds",
+    Curso = "${var.course_name}"
   }
 
   dynamic "ingress" {
@@ -81,12 +81,12 @@ resource "aws_security_group" "sg_rds" {
 }
 
 resource "aws_security_group" "sg_efs" {
-  name        = "sg_${var.project-name}_efs"
+  name        = "sg_${var.project_name}_efs"
   description = "Grupo Seguranca EFS"
   vpc_id      = aws_vpc.vpc.id
   tags = {
-    Name = "sg_${var.project-name}_efs",
-    Curso = "${var.course-name}"
+    Name  = "sg_${var.project_name}_efs",
+    Curso = "${var.course_name}"
   }
 
   ingress {

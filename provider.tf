@@ -9,14 +9,13 @@ terraform {
       source = "hashicorp/random"
     }
   }
-
   /*
   backend "s3" {
     bucket = "devops-terraform-desafio2"
     key    = "network/terraform.tfstate"
     region = "us-east-1"
   }
- 
+
   backend "remote" {
     organization = "devopsDesafio2"
     workspaces {
@@ -27,5 +26,5 @@ terraform {
 }
 
 provider "aws" {
-  region  = var.aws_region
+  region = var.aws_region
 }
