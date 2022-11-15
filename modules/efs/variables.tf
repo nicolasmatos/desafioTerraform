@@ -3,4 +3,8 @@ variable "project_name" {}
 variable "course_name" {}
 variable "subnet_priv1" {}
 variable "subnet_priv2" {}
+variable "subnet_priv3" {}
+variable "subnet_priv4" {}
+variable "subnet_priv5" {}
+variable "subnet_priv6" {}
 variable "sg_efs" {}

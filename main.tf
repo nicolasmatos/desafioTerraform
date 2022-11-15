@@ -26,6 +26,10 @@ module "efs" {
   course_name = var.course_name
   subnet_priv1 = module.network.priv1_id
   subnet_priv2 = module.network.priv2_id
+  subnet_priv3 = module.network.priv3_id
+  subnet_priv4 = module.network.priv4_id
+  subnet_priv5 = module.network.priv5_id
+  subnet_priv6 = module.network.priv6_id
   sg_efs = [module.network.sg_efs_id]
 
   depends_on = [module.network]
@@ -46,4 +50,23 @@ module "ec2" {
   sg_ec2 = [module.network.sg_ec2_id]
    
   depends_on = [module.rds, module.efs]
+}
+
+module "alb" {
+  source = "./modules/alb"
+
+  aws_region = var.aws_region
+  project_name = var.project_name
+  course_name = var.course_name
+  vpc_id = module.network.vpc_id
+  subnet_pub1 = module.network.pub1_id
+  subnet_pub2 = module.network.pub2_id
+  subnet_pub3 = module.network.pub3_id
+  subnet_pub4 = module.network.pub4_id
+  subnet_pub5 = module.network.pub5_id
+  subnet_pub6 = module.network.pub6_id
+  ec2_id = module.ec2.ec2_id
+  sg_alb = [module.network.sg_alb_id]
+
+  depends_on = [module.ec2]
 }

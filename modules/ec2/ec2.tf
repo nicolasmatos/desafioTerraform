@@ -14,7 +14,6 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"]
 }
 
-
 resource "aws_instance" "wordpress" {
   instance_type               = var.ec2_instance_type
   ami                         = data.aws_ami.ubuntu.id
