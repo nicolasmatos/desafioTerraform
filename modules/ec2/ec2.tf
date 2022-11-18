@@ -27,3 +27,19 @@ resource "aws_instance" "wordpress" {
     Curso = "${var.course_name}"
   }
 }
+
+resource "time_sleep" "wait_240_seconds" {
+  depends_on      = [aws_instance.wordpress]
+  create_duration = "240s"
+}
+
+resource "aws_ami_from_instance" "wordpress" {
+  name               = "${var.project_name}-wordpress"
+  source_instance_id = aws_instance.wordpress.id
+  tags = {
+    Name  = "${var.project_name}-wordpress",
+    Curso = "${var.course_name}"
+  }
+
+  depends_on         = [time_sleep.wait_240_seconds]
+}

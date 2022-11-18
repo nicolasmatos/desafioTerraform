@@ -1,0 +1,13 @@
+variable "aws_region" {}
+variable "project_name" {}
+variable "course_name" {}
+variable "subnet_pub1" {}
+variable "subnet_pub2" {}
+variable "subnet_pub3" {}
+variable "subnet_pub4" {}
+variable "subnet_pub5" {}
+variable "subnet_pub6" {}
+variable "alb_tg_id" {}
+variable "key_name" {}
+variable "ec2_instance_type" {}
+variable "sg_ec2" {}

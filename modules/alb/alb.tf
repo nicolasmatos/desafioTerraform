@@ -4,7 +4,7 @@ resource "aws_lb" "alb" {
   security_groups    = var.sg_alb
   subnets            = [var.subnet_pub1, var.subnet_pub2, var.subnet_pub3, var.subnet_pub4, var.subnet_pub5, var.subnet_pub6]
   tags = {
-    Name = "alb-${var.project_name}",
+    Name  = "alb-${var.project_name}",
     Curso = "${var.course_name}"
   }
 }
@@ -15,7 +15,7 @@ resource "aws_lb_target_group" "alb_tg" {
   protocol = "HTTP"
 
   tags = {
-    Name = "tg-${var.project_name}",
+    Name  = "tg-${var.project_name}",
     Curso = "${var.course_name}"
   }
 
@@ -46,8 +46,8 @@ resource "aws_lb_listener" "alb_listener" {
   }
 }
 
-resource "aws_alb_target_group_attachment" "this" { 
-  target_group_arn = aws_lb_target_group.alb_tg.arn 
-  target_id = var.ec2_id
-  port = 80
+resource "aws_alb_target_group_attachment" "this" {
+  target_group_arn = aws_lb_target_group.alb_tg.arn
+  target_id        = var.ec2_id
+  port             = 80
 }
