@@ -26,13 +26,27 @@
 | [aws_ami_from_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ami_from_instance) | resource |
 
 
-## Inputs
+## Variables Inputs
 
 | Name | Type | Default | Required |
 |------|------|---------|:--------:|
 | <a name="aws_region"></a> aws_region | `string` | `null` | yes |
 | <a name="project_name"></a> project_name | `string` | `null` | yes |
 | <a name="course_name"></a> course_name | `string` | `null` | yes |
+
+## Modules Inputs
+
+| Name | Module | Type | Required |
+|------|------|---------|:--------:|
+| <a name="efs_id"></a> efs_id | [module.efs](../efs/output.tf) | `output` | yes |
+| <a name="rds_endpoint"></a> rds_endpoint | [module.rds](../rds/output.tf) | `output` | yes |
+| <a name="db_name"></a> db_name | [module.rds](../rds/output.tf) | `output` | yes |
+| <a name="db_user"></a> db_user | [module.rds](../rds/output.tf) | `output` | yes |
+| <a name="db_password"></a> db_password | [module.rds](../rds/output.tf) | `output` | yes |
+| <a name="subnet_pub1"></a> subnet_pub1 | [module.network](../network/output.tf) | `output` | yes |
+| <a name="sg_ec2"></a> sg_ec2 |[module.network](../network/output.tf) | `output` | yes |
+
+
 
 ## Outputs
 
