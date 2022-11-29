@@ -12,6 +12,7 @@ Essas instruções o ajudarão a implementar a aplicação criada para Marisa St
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2.9 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.19 |
+| <a name="git"></a> [git](#requirement\_git) | ~> 2.34.1 |
 
 ## Providers
 
@@ -39,10 +40,8 @@ Essas instruções o ajudarão a implementar a aplicação criada para Marisa St
 | <a name="project_name"></a> project_name | `string` | `null` | yes |
 | <a name="course_name"></a> course_name | `string` | `null` | yes |
 
-### 📋 Pré-requisitos
 
-Ter instalado o Terraform, estamos usando a versão "1.2.9".
-Ter instalado e configurado o Git.
+### 🔧 Instalação Projeto
 
 ```
 Instalação do Terraform:
@@ -61,15 +60,11 @@ git config --global user.email "Informe o seu e-mail"
 
 Utilizamos o S3 como backend para armazenar o arquivo terraform.tfstate, por isso será necessário editar o arquivo provider.tf informando o nome do seu bucket, que deverá ser previamente criado na AWS.
 
-### 🔧 Instalação Projeto
 
-Clonar o repositório https://gitlab.com/cloud_treinamentos/devops/desafio2.git
-
-
+Clonar o repositório
 ```
 Para clonar o repositório execute:
 Git clone https://gitlab.com/cloud_treinamentos/devops/desafio2.git
-
 ```
 
 Em seguida faremos a inicialização do Terraform:
