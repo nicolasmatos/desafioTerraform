@@ -4,6 +4,7 @@ module "network" {
   aws_region   = var.aws_region
   project_name = var.project_name
   course_name  = var.course_name
+  tags         = local.tags
 }
 
 module "rds" {
@@ -14,6 +15,7 @@ module "rds" {
   course_name   = var.course_name
   db_group_priv = module.network.db_group_priv_id
   sg_rds        = [module.network.sg_rds_id]
+  tags          = local.tags
 
   depends_on = [module.network]
 }
@@ -31,6 +33,7 @@ module "efs" {
   subnet_priv5 = module.network.priv5_id
   subnet_priv6 = module.network.priv6_id
   sg_efs       = [module.network.sg_efs_id]
+  tags         = local.tags
 
   depends_on = [module.network]
 }
@@ -48,6 +51,7 @@ module "ec2" {
   db_password  = module.rds.db_password
   subnet_pub1  = module.network.pub1_id
   sg_ec2       = [module.network.sg_ec2_id]
+  tags         = local.tags
 
   depends_on = [module.rds, module.efs]
 }
@@ -58,6 +62,7 @@ module "alb" {
   aws_region   = var.aws_region
   project_name = var.project_name
   course_name  = var.course_name
+  domain_name  = var.domain_name
   vpc_id       = module.network.vpc_id
   subnet_pub1  = module.network.pub1_id
   subnet_pub2  = module.network.pub2_id
@@ -67,6 +72,7 @@ module "alb" {
   subnet_pub6  = module.network.pub6_id
   ec2_id       = module.ec2.ec2_id
   sg_alb       = [module.network.sg_alb_id]
+  tags         = local.tags
 
   depends_on = [module.ec2]
 }
@@ -86,7 +92,10 @@ module "as" {
   alb_tg_id         = module.alb.alb_tg_id
   key_name          = module.ec2.key_name
   ec2_instance_type = module.ec2.ec2_instance_type
+  ec2_monitoring    = module.ec2.ec2_monitoring
   sg_ec2            = [module.network.sg_ec2_id]
+  tags              = local.tags
+  tags_asg          = local.tags_asg
 
   depends_on = [module.alb]
 }

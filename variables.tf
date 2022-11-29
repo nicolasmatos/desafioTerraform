@@ -4,6 +4,12 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
+variable "owner" {
+  type        = string
+  description = ""
+  default     = "G-One Cloud"
+}
+
 variable "project_name" {
   type        = string
   description = ""
@@ -14,4 +20,22 @@ variable "course_name" {
   type        = string
   description = ""
   default     = "DevOps Cloud"
+}
+
+variable "domain_name" {
+  type        = string
+  description = ""
+  default     = "g1cloud.tk"
+}
+
+variable "terraform" {
+  type        = bool
+  description = ""
+  default     = true
+}
+
+variable "environment" {
+  type        = string
+  description = ""
+  default     = "dev"
 }

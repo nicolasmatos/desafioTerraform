@@ -2,10 +2,12 @@ resource "aws_efs_file_system" "data" {
   encrypted        = true
   performance_mode = "generalPurpose"
   throughput_mode  = "bursting"
-  tags = {
-    Name  = "${var.project_name}-files",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}-files"
+    }
+  )
   lifecycle_policy {
     transition_to_ia = "AFTER_30_DAYS"
   }

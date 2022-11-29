@@ -1,6 +1,7 @@
 variable "aws_region" {}
 variable "project_name" {}
 variable "course_name" {}
+variable "tags" {}
 
 // portas security group 
 variable "sg_ec2" {

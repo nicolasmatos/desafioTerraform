@@ -1,6 +1,7 @@
 variable "aws_region" {}
 variable "project_name" {}
 variable "course_name" {}
+variable "domain_name" {}
 variable "vpc_id" {}
 variable "subnet_pub1" {}
 variable "subnet_pub2" {}
@@ -10,3 +11,4 @@ variable "subnet_pub5" {}
 variable "subnet_pub6" {}
 variable "ec2_id" {}
 variable "sg_alb" {}
+variable "tags" {}

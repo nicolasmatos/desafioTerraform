@@ -8,3 +8,4 @@ variable "subnet_priv4" {}
 variable "subnet_priv5" {}
 variable "subnet_priv6" {}
 variable "sg_efs" {}
+variable "tags" {}

@@ -8,10 +8,12 @@ resource "aws_network_acl" "acl_pub" {
     aws_subnet.pub5.id,
     aws_subnet.pub6.id
   ]
-  tags = {
-    Name  = "acl_${var.project_name}_pub",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "acl_${var.project_name}_pub"
+    }
+  )
 
   ingress {
     protocol   = -1
@@ -42,10 +44,12 @@ resource "aws_network_acl" "acl_priv" {
     aws_subnet.priv5.id,
     aws_subnet.priv6.id
   ]
-  tags = {
-    Name  = "acl_${var.project_name}_priv",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "acl_${var.project_name}_priv"
+    }
+  )
 
   ingress {
     protocol   = -1

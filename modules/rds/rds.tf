@@ -13,8 +13,10 @@ resource "aws_db_instance" "rds" {
   skip_final_snapshot    = true
   db_subnet_group_name   = var.db_group_priv
   vpc_security_group_ids = var.sg_rds
-  tags = {
-    Name  = "${var.project_name}-db",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}-db"
+    }
+  )
 }

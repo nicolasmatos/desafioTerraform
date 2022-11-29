@@ -22,10 +22,13 @@ resource "aws_instance" "wordpress" {
   user_data                   = data.template_file.script.rendered
   key_name                    = var.key_name
   associate_public_ip_address = true
-  tags = {
-    Name  = "${var.project_name}-wordpress",
-    Curso = "${var.course_name}"
-  }
+  monitoring                  = var.monitoring
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}-wordpress"
+    }
+  )
 }
 
 resource "time_sleep" "wait_240_seconds" {
@@ -36,10 +39,12 @@ resource "time_sleep" "wait_240_seconds" {
 resource "aws_ami_from_instance" "wordpress" {
   name               = "${var.project_name}-wordpress"
   source_instance_id = aws_instance.wordpress.id
-  tags = {
-    Name  = "${var.project_name}-wordpress",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}-wordpress"
+    }
+  )
 
-  depends_on         = [time_sleep.wait_240_seconds]
+  depends_on = [time_sleep.wait_240_seconds]
 }

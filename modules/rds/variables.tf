@@ -3,6 +3,7 @@ variable "project_name" {}
 variable "course_name" {}
 variable "db_group_priv" {}
 variable "sg_rds" {}
+variable "tags" {}
 
 variable "db_instance_type" {
   type        = string

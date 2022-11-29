@@ -10,4 +10,7 @@ variable "subnet_pub6" {}
 variable "alb_tg_id" {}
 variable "key_name" {}
 variable "ec2_instance_type" {}
+variable "ec2_monitoring" {}
 variable "sg_ec2" {}
+variable "tags" {}
+variable "tags_asg" {}

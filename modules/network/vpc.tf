@@ -3,18 +3,22 @@ resource "aws_vpc" "vpc" {
   enable_dns_support   = true
 
   cidr_block = "10.4.0.0/16"
-  tags = {
-    Name  = "${var.project_name}",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}"
+    }
+  )
 }
 
 resource "aws_internet_gateway" "ig" {
   vpc_id = aws_vpc.vpc.id
-  tags = {
-    Name  = "ig-${var.project_name}",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "ig-${var.project_name}"
+    }
+  )
 }
 
 resource "aws_subnet" "pub1" {
@@ -22,10 +26,12 @@ resource "aws_subnet" "pub1" {
   map_public_ip_on_launch = true
   cidr_block              = "10.4.1.0/24"
   availability_zone       = "${var.aws_region}a"
-  tags = {
-    Name  = "${var.project_name}_pub1",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_pub1"
+    }
+  )
 }
 
 resource "aws_subnet" "pub2" {
@@ -33,10 +39,12 @@ resource "aws_subnet" "pub2" {
   map_public_ip_on_launch = true
   cidr_block              = "10.4.2.0/24"
   availability_zone       = "${var.aws_region}b"
-  tags = {
-    Name  = "${var.project_name}_pub2",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_pub2"
+    }
+  )
 }
 
 resource "aws_subnet" "pub3" {
@@ -44,10 +52,12 @@ resource "aws_subnet" "pub3" {
   map_public_ip_on_launch = true
   cidr_block              = "10.4.3.0/24"
   availability_zone       = "${var.aws_region}c"
-  tags = {
-    Name  = "${var.project_name}-pub3",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_pub3"
+    }
+  )
 }
 
 resource "aws_subnet" "pub4" {
@@ -55,10 +65,12 @@ resource "aws_subnet" "pub4" {
   map_public_ip_on_launch = true
   cidr_block              = "10.4.4.0/24"
   availability_zone       = "${var.aws_region}d"
-  tags = {
-    Name  = "${var.project_name}-pub4",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_pub4"
+    }
+  )
 }
 
 resource "aws_subnet" "pub5" {
@@ -66,10 +78,12 @@ resource "aws_subnet" "pub5" {
   map_public_ip_on_launch = true
   cidr_block              = "10.4.5.0/24"
   availability_zone       = "${var.aws_region}e"
-  tags = {
-    Name  = "${var.project_name}-pub5",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_pub5"
+    }
+  )
 }
 
 resource "aws_subnet" "pub6" {
@@ -77,70 +91,84 @@ resource "aws_subnet" "pub6" {
   map_public_ip_on_launch = true
   cidr_block              = "10.4.6.0/24"
   availability_zone       = "${var.aws_region}f"
-  tags = {
-    Name  = "${var.project_name}-pub6",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_pub6"
+    }
+  )
 }
 
 resource "aws_subnet" "priv1" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = "10.4.7.0/24"
   availability_zone = "${var.aws_region}a"
-  tags = {
-    Name  = "${var.project_name}-priv1",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_priv1"
+    }
+  )
 }
 
 resource "aws_subnet" "priv2" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = "10.4.8.0/24"
   availability_zone = "${var.aws_region}b"
-  tags = {
-    Name  = "${var.project_name}-priv2",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_priv2"
+    }
+  )
 }
 
 resource "aws_subnet" "priv3" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = "10.4.9.0/24"
   availability_zone = "${var.aws_region}c"
-  tags = {
-    Name  = "${var.project_name}-priv3",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_priv3"
+    }
+  )
 }
 
 resource "aws_subnet" "priv4" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = "10.4.10.0/24"
   availability_zone = "${var.aws_region}d"
-  tags = {
-    Name  = "${var.project_name}-priv4",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_priv4"
+    }
+  )
 }
 
 resource "aws_subnet" "priv5" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = "10.4.11.0/24"
   availability_zone = "${var.aws_region}e"
-  tags = {
-    Name  = "${var.project_name}-priv5",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_priv5"
+    }
+  )
 }
 
 resource "aws_subnet" "priv6" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = "10.4.12.0/24"
   availability_zone = "${var.aws_region}f"
-  tags = {
-    Name  = "${var.project_name}-priv6",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_priv6"
+    }
+  )
 }
 
 resource "aws_route_table" "rt_pub" {
@@ -150,18 +178,22 @@ resource "aws_route_table" "rt_pub" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.ig.id
   }
-  tags = {
-    Name  = "rt-${var.project_name}-pub",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "rt-${var.project_name}-pub"
+    }
+  )
 }
 
 resource "aws_route_table" "rt_priv" {
   vpc_id = aws_vpc.vpc.id
-  tags = {
-    Name  = "rt-${var.project_name}-priv",
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "rt-${var.project_name}-priv"
+    }
+  )
 }
 
 resource "aws_route_table_association" "pub1" {
@@ -227,17 +259,21 @@ resource "aws_route_table_association" "priv6" {
 resource "aws_db_subnet_group" "db_group_priv" {
   name       = "${var.project_name}_priv"
   subnet_ids = [aws_subnet.priv1.id, aws_subnet.priv2.id, aws_subnet.priv3.id, aws_subnet.priv4.id, aws_subnet.priv5.id, aws_subnet.priv6.id]
-  tags = {
-    Name  = "${var.project_name}_priv"
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_priv"
+    }
+  )
 }
 
 resource "aws_db_subnet_group" "db_group_pub" {
   name       = "${var.project_name}_pub"
   subnet_ids = [aws_subnet.priv1.id, aws_subnet.priv2.id, aws_subnet.priv3.id, aws_subnet.priv4.id, aws_subnet.priv5.id, aws_subnet.priv6.id]
-  tags = {
-    Name  = "${var.project_name}_pub"
-    Curso = "${var.course_name}"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.project_name}_pub"
+    }
+  )
 }
