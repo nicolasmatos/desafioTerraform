@@ -12,7 +12,7 @@ Essas instruções o ajudarão a implementar a aplicação criada para Marisa St
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2.9 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.19 |
-| <a name="git"></a> [git](#requirement\_git) | ~> 2.34.1 |
+| <a name="git"></a> [git](#requirement\_git) | >= 2.34.1 |
 
 ## Providers
 
@@ -103,9 +103,10 @@ Para execução e criação da infra-estrutura é necessária a confirmação di
 
 ## 🛠️ Ferramentas utilizadas
 
-* [Gitlab](https://gitlab.com/) - controle de versão
-* [Terraform](https://developer.hashicorp.com/terraform/downloads) - desenvolvimento infra-estrutura como código
-* [Git](https://git-scm.com/) - clonar repositório
+* [Git](https://git-scm.com/downloads) - Controle de Versão
+* [Gitlab](https://gitlab.com/) - Repositório Remoto
+* [Terraform](https://developer.hashicorp.com/terraform/downloads) - Infraestrutura como código
+* [AWS](https://aws.amazon.com/pt/console/) - Cloud Provider
 
 ## 📌 Versão
 
