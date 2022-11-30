@@ -54,7 +54,7 @@ Instalação Git:
 https://git-scm.com/
 
 Configuração Git:
-git config --global user.neme "Informe o seu nome"
+git config --global user.name "Informe o seu nome"
 git config --global user.email "Informe o seu e-mail"
 ```
 
