@@ -27,6 +27,12 @@
 | [aws_alb_target_group_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group_attachment) | resource |
 
 
+## Locals Inputs
+
+| Name | Type | Default | Required |
+|------|------|---------|:--------:|
+| <a name="tags"></a> tags | `list` | `null` | yes |
+
 ## Variables Inputs
 
 | Name | Type | Default | Required |
@@ -34,6 +40,7 @@
 | <a name="aws_region"></a> aws_region | `string` | `null` | yes |
 | <a name="project_name"></a> project_name | `string` | `null` | yes |
 | <a name="course_name"></a> course_name | `string` | `null` | yes |
+| <a name="domain_name"></a> domain_name | `string` | `null` | yes |
 
 ## Modules Inputs
 
@@ -48,8 +55,6 @@
 | <a name="subnet_pub6"></a> subnet_pub6 | [module.network](../network/output.tf) | `output` | yes |
 | <a name="sg_alb"></a> sg_alb | [module.network](../network/output.tf) | `output` | yes |
 | <a name="ec2_id"></a> ec2_id | [module.ec2](../ec2/output.tf) | `output` | yes |
-
-
 
 ## Outputs
 

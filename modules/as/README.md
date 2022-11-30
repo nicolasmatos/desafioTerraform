@@ -24,6 +24,13 @@
 | [aws_launch_template](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/launch_template) | resource |
 | [aws_autoscaling_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group) | resource |
 
+## Locals Inputs
+
+| Name | Type | Default | Required |
+|------|------|---------|:--------:|
+| <a name="tags"></a> tags | `list` | `null` | yes |
+| <a name="tags_asg"></a> tags_asg | `map` | `null` | yes |
+
 ## Variables Inputs
 
 | Name | Type | Default | Required |
@@ -48,11 +55,8 @@
 | <a name="key_name"></a> key_name | [module.ec2](../ec2/output.tf) | `output` | yes |
 | <a name="ec2_instance_type"></a> ec2_instance_type | [module.ec2](../ec2/output.tf) | `output` | yes |
 
-
-
 ## Outputs
 
 | Name | Description | 
 |------|-------------|
 | <a name="asg_id"></a> [asg_id](./output.tf) | Auto Scaling Group ID | 
-

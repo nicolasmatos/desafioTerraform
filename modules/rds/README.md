@@ -23,6 +23,11 @@
 |------|------|
 | [aws_db_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance) | resource |
 
+## Locals Inputs
+
+| Name | Type | Default | Required |
+|------|------|---------|:--------:|
+| <a name="tags"></a> tags | `list` | `null` | yes |
 
 ## Variables Inputs
 
@@ -38,7 +43,6 @@
 |------|------|---------|:--------:|
 | <a name="db_group_priv"></a> db_group_priv | [module.network](../network/output.tf) | `output` | yes |
 | <a name="sg_rds"></a> sg_rds | [module.network](../network/output.tf) | `output` | yes |
-
 
 ## Outputs
 

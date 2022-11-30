@@ -29,6 +29,11 @@
 | [aws_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
 | [aws_network_acl](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/network_acl) | resource |
 
+## Locals Inputs
+
+| Name | Type | Default | Required |
+|------|------|---------|:--------:|
+| <a name="tags"></a> tags | `list` | `null` | yes |
 
 ## Variables Inputs
 
@@ -66,7 +71,3 @@
 | <a name="acl_priv_id"></a> acl_priv_id | Private ACL ID | 
 | <a name="db_group_priv_id"></a> db_group_priv_id | Private Group RDS | 
 | <a name="db_group_pub_id"></a> db_group_pub_id | Public Group RDS | 
-
-
-
-

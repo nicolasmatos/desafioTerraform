@@ -39,7 +39,10 @@ Essas instruções o ajudarão a implementar a aplicação criada para Marisa St
 | <a name="aws_region"></a> aws_region | `string` | `null` | yes |
 | <a name="project_name"></a> project_name | `string` | `null` | yes |
 | <a name="course_name"></a> course_name | `string` | `null` | yes |
-
+| <a name="owner"></a> owner | `string` | `null` | yes |
+| <a name="domain_name"></a> domain_name | `string` | `null` | yes |
+| <a name="terraform"></a> terraform | `bolean` | `true` | yes |
+| <a name="environment"></a> domain_name | `string` | `null` | yes |
 
 ### 🔧 Instalação Projeto
 
@@ -53,24 +56,22 @@ https://git-scm.com/
 Configuração Git:
 git config --global user.neme "Informe o seu nome"
 git config --global user.email "Informe o seu e-mail"
-
 ```
 
 #### ***Importante!!!***
 
 Utilizamos o S3 como backend para armazenar o arquivo terraform.tfstate, por isso será necessário editar o arquivo provider.tf informando o nome do seu bucket, que deverá ser previamente criado na AWS.
 
-
 Clonar o repositório
 ```
 Para clonar o repositório execute:
-Git clone https://gitlab.com/cloud_treinamentos/devops/desafio2.git
+git clone https://gitlab.com/cloud_treinamentos/devops/desafio2.git
 ```
 
 Em seguida faremos a inicialização do Terraform:
 
 ```
-Terraform init
+terraform init
 ```
 
 ## ⚙️ Criando a infra-estrutura na Cloud da AWS
@@ -81,10 +82,10 @@ Certifique-se de estar no diretório onde o repositório foi clonado, etapa acim
 Execute os seguintes comandos na ordem a seguir:
 
 ```
-Terraform plan
+terraform plan
 ```
 ```
-Terraform apply
+terraform apply
 ```
 
 ## 📦 Implantação
@@ -92,7 +93,7 @@ Terraform apply
 No momento em que o comando
 
 ```
-Terraform apply
+terraform apply
 ```
 
  for executado, todos os recursos utilizados para criação da infra-estrutura serão listados.
@@ -101,15 +102,18 @@ Terraform apply
 
 Para execução e criação da infra-estrutura é necessária a confirmação digitando **"y"** (yes).
 
+## 🗂️ Diagrama da solução
+
+![Serviços AWS utilizados!](/diagram/diagram.png "Serviços AWS utilizados")
+
 ## 🛠️ Ferramentas utilizadas
 
+* [AWS](https://aws.amazon.com/pt/console/) - Cloud Provider
+* [Draw.io](https://draw.io/) - Diagrama
 * [Git](https://git-scm.com/downloads) - Controle de Versão
 * [Gitlab](https://gitlab.com/) - Repositório Remoto
 * [Terraform](https://developer.hashicorp.com/terraform/downloads) - Infraestrutura como código
-* [AWS](https://aws.amazon.com/pt/console/) - Cloud Provider
 
 ## 📌 Versão
 
 Usamos https://gitlab.com/ para controle de versão. 
-
-

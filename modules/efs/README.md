@@ -25,6 +25,11 @@
 | [aws_efs_mount_target](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/efs_mount_target) | resource |
 | [aws_efs_access_point](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/efs_access_point) | resource |
 
+## Locals Inputs
+
+| Name | Type | Default | Required |
+|------|------|---------|:--------:|
+| <a name="tags"></a> tags | `list` | `null` | yes |
 
 ## Variables Inputs
 
@@ -46,11 +51,8 @@
 | <a name="subnet_priv6"></a> subnet_priv6 | [module.network](../network/output.tf) | `output` | yes |
 | <a name="sg_efs"></a> sg_efs | [module.network](../network/output.tf) | `output` | yes |
 
-
-
 ## Outputs
 
 | Name | Description | 
 |------|-------------|
 | <a name="efs_id"></a> efs_id | Elastic File System ID | 
-

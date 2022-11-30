@@ -25,6 +25,11 @@
 | [time_sleep](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) | resource |
 | [aws_ami_from_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ami_from_instance) | resource |
 
+## Locals Inputs
+
+| Name | Type | Default | Required |
+|------|------|---------|:--------:|
+| <a name="tags"></a> tags | `list` | `null` | yes |
 
 ## Variables Inputs
 
@@ -45,8 +50,6 @@
 | <a name="db_password"></a> db_password | [module.rds](../rds/output.tf) | `output` | yes |
 | <a name="subnet_pub1"></a> subnet_pub1 | [module.network](../network/output.tf) | `output` | yes |
 | <a name="sg_ec2"></a> sg_ec2 |[module.network](../network/output.tf) | `output` | yes |
-
-
 
 ## Outputs
 
