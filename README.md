@@ -42,7 +42,7 @@ Essas instruções o ajudarão a implementar a aplicação criada para Marisa St
 | <a name="owner"></a> owner | `string` | `null` | yes |
 | <a name="domain_name"></a> domain_name | `string` | `null` | yes |
 | <a name="terraform"></a> terraform | `bolean` | `true` | yes |
-| <a name="environment"></a> domain_name | `string` | `null` | yes |
+| <a name="environment"></a> environment | `string` | `null` | yes |
 
 ### 🔧 Instalação Projeto
 
@@ -61,6 +61,8 @@ git config --global user.email "Informe o seu e-mail"
 #### ***Importante!!!***
 
 Utilizamos o S3 como backend para armazenar o arquivo terraform.tfstate, por isso será necessário editar o arquivo provider.tf informando o nome do seu bucket, que deverá ser previamente criado na AWS.
+
+Para utilização do certificado SSL e o domínio personalizado para o ALB, é necessário ser criado a zona de hospedagem no Route 53 previamente e criado o certificado.
 
 Clonar o repositório
 ```
