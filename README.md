@@ -1,6 +1,8 @@
-# Desafio 2 - DevOps - G1
+# Desafio 2 - Especialização DevOps Cloud da Cloud Treinamentos - Grupo 1
 
 Desenvolver uma infraestrutura como código, usando o Terraform para migrar a aplicação da Marisa Store pra nuvem da AWS.
+
+Para mais detalhes do desafio [clique aqui](https://gitlab.com/devops-cloud-community/desafios-d/desafios-curso/desafio-02/)
 
 ## 🚀 Começando
 
