@@ -67,7 +67,7 @@ Para utilização do certificado SSL e o domínio personalizado para o ALB, é n
 Clonar o repositório
 ```
 Para clonar o repositório execute:
-git clone https://gitlab.com/cloud_treinamentos/devops/desafio2.git
+git clone https://gitlab.com/nicolasmatos/desafioTerraform.git
 ```
 
 Em seguida faremos a inicialização do Terraform:
